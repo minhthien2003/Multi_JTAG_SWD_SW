@@ -219,8 +219,10 @@ void GateDriver(eChannel Channel)
         case CHANNEL_3:
         /*Select Pin Driver*/
         HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, GPIO_PIN_SET);
+
         HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(SEC_B_GPIO_Port, SEC_B_Pin, GPIO_PIN_RESET);
+
          /*TDO pin driver*/
         HAL_GPIO_WritePin(BIT_A_GPIO_Port, BIT_A_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(BIT_B_GPIO_Port, BIT_B_Pin, GPIO_PIN_SET);
@@ -232,12 +234,14 @@ void GateDriver(eChannel Channel)
         case CHANNEL_4:
         /*Select Pin Driver*/
         HAL_GPIO_WritePin(EN_A_GPIO_Port, EN_A_Pin, GPIO_PIN_SET);
-        HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, GPIO_PIN_SET);
+
+        HAL_GPIO_WritePin(EN_B_GPIO_Port, EN_B_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(SEC_B_GPIO_Port, SEC_B_Pin, GPIO_PIN_SET);
+
          /*TDO pin driver*/
-        HAL_GPIO_WritePin(BIT_A_GPIO_Port, BIT_A_Pin, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(BIT_B_GPIO_Port, BIT_B_Pin, GPIO_PIN_RESET);
-        HAL_GPIO_WritePin(BIT_C_GPIO_Port, BIT_C_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(BIT_A_GPIO_Port, BIT_A_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(BIT_B_GPIO_Port, BIT_B_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(BIT_C_GPIO_Port, BIT_C_Pin, GPIO_PIN_RESET);
         /*Turn on Led channel 1*/
         HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_SET);
         break;
@@ -251,6 +255,8 @@ void GateDriver(eChannel Channel)
         HAL_GPIO_WritePin(LED_2_GPIO_Port, LED_2_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(LED_3_GPIO_Port, LED_3_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(LED_4_GPIO_Port, LED_4_Pin, GPIO_PIN_RESET);
+        break;
+        
     default:
         break;
     }
